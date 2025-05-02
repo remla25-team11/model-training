@@ -17,7 +17,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            c2_Classifier_Sentiment_Model
-            c1_BoW_Sentiment_Model.pkl
+            ./c2_Classifier_Sentiment_Model
+            ./c1_BoW_Sentiment_Model.pkl
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
