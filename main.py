@@ -7,12 +7,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, accuracy_score
 from sklearn.naive_bayes import GaussianNB
 
-
 # - Import dataset
 dataset = pd.read_csv('a1_RestaurantReviews_HistoricDump.tsv', delimiter = '\t', quoting = 3)
 dataset.shape
 dataset.head()
-
 
 # - Data preprocessing
 #TODO fetch corpus from lib-ml repository
@@ -40,10 +38,9 @@ joblib.dump(classifier, 'c2_Classifier_Sentiment_Model')
 
 # - Model performance
 y_pred = classifier.predict(X_test)
-cm = confusion_matrix(y_test, y_pred)
 
+cm = confusion_matrix(y_test, y_pred)
 print(f'Confusion matrix: {cm}')
 
 acc_score = accuracy_score(y_test, y_pred)
-
 print(f'Accuracy score: {acc_score}')
