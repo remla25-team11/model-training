@@ -1,0 +1,4 @@
+joblib==1.5.0
+pandas==2.2.3
+scikit_learn==1.6.1
+git+https://github.com/remla25-team11/lib-ml@v0.1.1
