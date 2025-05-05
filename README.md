@@ -1,22 +1,24 @@
-# Sentiment Analysis
+# Model Training
 
-This project is based on [Skillcate AI "Sentiment Analysis Project — with traditional ML & NLP"](https://medium.com/@skillcate/sentiment-analysis-project-with-traditional-ml-nlp-349185bf98dd). The linked Medium article gives further insights into the workflow and the reasoning of the authors.
+This repository contains the code used to train our sentiment classification model.  
+The training logic is implemented in the `main.py` file.
 
-In this repository, we have simplified the setup and integrated the data to avoid the external Google Drive dependency. This project is used as a runnning example in the course [Release Engineering for Machine Learning Applications (REMLA)](https://studyguide.tudelft.nl/a101_displayCourse.do?course_id=68893) taught at the Delft University of Technology. The copyright remains with the original authors.
+## Install dependencies
 
-The project illustrates how to train a model that performs sentiment analysis on restaurant reviews:
+Start by installing the necessary dependencies with:
 
-| File | Purpose |
-| --- | --- |
-| Training pipeline | `b1_Sentiment_Analysis_Model.ipynb` |
-| Inference pipeline | `b2_Sentiment_Predictor.ipynb` |
-| Training data | `a1_RestaurantReviews_HistoricDump.tsv` |
-| New, unlabeled data | `a2_RestaurantReviews_FreshDump` |
+```bash
+pip install -r requirements.txt
+```
 
-The project is known to work with Python 3.10, using the following dependencies:
+## 🔧 Usage
 
-- `notebook`
-- `pandas`
-- `nltk`
-- `scikit-learn`
+To train the model, simply run:
 
+```bash
+python main.py
+```
+
+The latest trained version of the model is available in the [Releases](https://github.com/remla25-team11/model-training/releases) section of this repository.
+
+You do not need to retrain the model unless you are making changes to the training logic or dataset.
