@@ -3,6 +3,14 @@
 This repository contains the code used to train our sentiment classification model.  
 The training logic is implemented in the `main.py` file.
 
+## Install dependencies
+
+Start by installing the necessary dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
 ## 🔧 Usage
 
 To train the model, simply run:
