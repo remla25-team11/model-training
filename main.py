@@ -7,14 +7,17 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, accuracy_score
 from sklearn.naive_bayes import GaussianNB
 
+from lib_ml import preprocess_text
+
 # - Import dataset
-dataset = pd.read_csv('a1_RestaurantReviews_HistoricDump.tsv', delimiter = '\t', quoting = 3)
-dataset.shape
-dataset.head()
+dataset = pd.read_csv('data/a1_RestaurantReviews_HistoricDump.tsv', delimiter = '\t', quoting = 3)
 
 # - Data preprocessing
-#TODO fetch corpus from lib-ml repository
 corpus = []
+
+for i in range(0, 900):
+    processed_text = preprocess_text(dataset['Review'][i])
+    corpus.append(processed_text)
 
 # - Data transformation
 cv = CountVectorizer(max_features = 1420)
