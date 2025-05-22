@@ -1,4 +1,4 @@
-import pickle
+import joblib
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from lib_ml import preprocess_text  # make sure this exists or define it here
@@ -19,8 +19,7 @@ def run():
     y = dataset.iloc[:900, -1].values
 
     # Save BoW model
-    with open('c1_BoW_Sentiment_Model.pkl', 'wb', encoding='utf-8') as f:
-        pickle.dump(cv, f)
+    joblib.dump(cv, 'c1_BoW_Sentiment_Model.pkl')
 
     pd.DataFrame(X).to_csv('data/X.csv', index=False)
     pd.DataFrame(y).to_csv('data/y.csv', index=False)
