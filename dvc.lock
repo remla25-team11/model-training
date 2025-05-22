@@ -1,0 +1,78 @@
+schema: '2.0'
+stages:
+  prepare_data:
+    cmd: python src/prepare_data.py
+    deps:
+    - path: data/a1_RestaurantReviews_HistoricDump.tsv
+      hash: md5
+      md5: 102f1f4193e0bdebdd6cce7f13e0a839
+      size: 54686
+    - path: src/prepare_data.py
+      hash: md5
+      md5: 960b37713ae481ef5f849c368a2c15a7
+      size: 739
+    outs:
+    - path: c1_BoW_Sentiment_Model.pkl
+      hash: md5
+      md5: 3fad7a4c0ec1b2a1fc95334240b40d81
+      size: 39432
+    - path: data/X.csv
+      hash: md5
+      md5: 6be418df4399217f4640f0e2af4e1c07
+      size: 2561990
+    - path: data/y.csv
+      hash: md5
+      md5: c9e14684e08e876427e05ae7b274695e
+      size: 1802
+  train_model:
+    cmd: python src/train_model.py
+    deps:
+    - path: data/X.csv
+      hash: md5
+      md5: 6be418df4399217f4640f0e2af4e1c07
+      size: 2561990
+    - path: data/y.csv
+      hash: md5
+      md5: c9e14684e08e876427e05ae7b274695e
+      size: 1802
+    - path: src/train_model.py
+      hash: md5
+      md5: 5d97223213d4b78c5fd59ae4c4139012
+      size: 721
+    outs:
+    - path: c2_Classifier_Sentiment_Model
+      hash: md5
+      md5: 7dc6aed243ae2e83d0af2e966804ad5f
+      size: 46215
+    - path: data/X_test.csv
+      hash: md5
+      md5: cee64df9c927677f4e97ebcfc5378f78
+      size: 517190
+    - path: data/y_test.csv
+      hash: md5
+      md5: 038fc0a733d40fe420fadaf9efcf903e
+      size: 362
+  evaluate_model:
+    cmd: python src/evaluate_model.py
+    deps:
+    - path: c2_Classifier_Sentiment_Model
+      hash: md5
+      md5: 7dc6aed243ae2e83d0af2e966804ad5f
+      size: 46215
+    - path: data/X_test.csv
+      hash: md5
+      md5: cee64df9c927677f4e97ebcfc5378f78
+      size: 517190
+    - path: data/y_test.csv
+      hash: md5
+      md5: 038fc0a733d40fe420fadaf9efcf903e
+      size: 362
+    - path: src/evaluate_model.py
+      hash: md5
+      md5: 541df4776f8fc37b7c0574df2cd86ef6
+      size: 733
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: 892def34d7fbc26143a5b9317773193f
+      size: 32

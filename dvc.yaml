@@ -1,0 +1,31 @@
+stages:
+  prepare_data:
+    cmd: python src/prepare_data.py
+    deps:
+    - src/prepare_data.py
+    - data/a1_RestaurantReviews_HistoricDump.tsv
+    outs:
+    - data/X.csv
+    - data/y.csv
+    - c1_BoW_Sentiment_Model.pkl
+
+  train_model:
+    cmd: python src/train_model.py
+    deps:
+    - src/train_model.py
+    - data/X.csv
+    - data/y.csv
+    outs:
+    - c2_Classifier_Sentiment_Model
+    - data/X_test.csv
+    - data/y_test.csv
+
+  evaluate_model:
+    cmd: python src/evaluate_model.py
+    deps:
+    - src/evaluate_model.py
+    - data/X_test.csv
+    - data/y_test.csv
+    - c2_Classifier_Sentiment_Model
+    metrics:
+    - metrics.json
