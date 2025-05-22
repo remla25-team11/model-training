@@ -3,6 +3,8 @@ import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 
+# pylint: disable=invalid-name
+
 def run():
     # Load features
     X = pd.read_csv('data/X.csv').values

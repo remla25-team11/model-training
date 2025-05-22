@@ -1,7 +1,9 @@
+import json
 import pandas as pd
 import joblib
 from sklearn.metrics import confusion_matrix, accuracy_score
-import json
+
+# pylint: disable=invalid-name
 
 def run():
     # Load model and test data
@@ -19,7 +21,7 @@ def run():
     print(f'Accuracy score: {acc_score:.4f}')
 
     # Save metrics for DVC tracking
-    with open('metrics.json', 'w') as f:
+    with open("metrics.json", "w", encoding="utf-8") as f:
         json.dump({"accuracy": float(acc_score)}, f)
 
 if __name__ == "__main__":

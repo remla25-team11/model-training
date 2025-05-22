@@ -1,7 +1,9 @@
-import pandas as pd
 import pickle
+import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from lib_ml import preprocess_text  # make sure this exists or define it here
+
+# pylint: disable=invalid-name
 
 def run():
     dataset = pd.read_csv('data/a1_RestaurantReviews_HistoricDump.tsv', delimiter='\t', quoting=3)
