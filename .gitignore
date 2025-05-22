@@ -8,3 +8,5 @@
 
 # Model files (tracked via DVC)
 c2_Classifier_Sentiment_Model
+__pycache__/
+*.pyc
