@@ -23,11 +23,11 @@ jobs:
 
       - name: Lint code
         run: |
-          pylint src/
+          pylint src/ tests/
           flake8 src/
           bandit -r src/
 
       - name: Run tests and collect coverage
         run: |
           coverage run -m pytest
-          coverage report
+          coverage report --fail-under=80
