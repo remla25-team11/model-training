@@ -2,7 +2,7 @@ import joblib
 
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
-# from lib_ml import preprocess_text  # make sure this exists or define it here
+from lib_ml import preprocess_text  # make sure this exists or define it here
 
 def run():
 
