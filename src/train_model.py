@@ -22,7 +22,7 @@ def run():
     classifier.fit(X_train, y_train)
 
     # Save model
-    joblib.dump(classifier, 'c2_Classifier_Sentiment_Model')
+    joblib.dump(classifier, 'models/c2_Classifier_Sentiment_Model.pkl')
 
     # Save test data
     pd.DataFrame(X_test).to_csv('data/X_test.csv', index=False)

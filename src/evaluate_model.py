@@ -9,7 +9,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 def run():
 
     # Load model and test data
-    classifier = joblib.load('c2_Classifier_Sentiment_Model')
+    classifier = joblib.load('models/c2_Classifier_Sentiment_Model.pkl')
     X_test = pd.read_csv('data/X_test.csv').values
     y_test = pd.read_csv('data/y_test.csv').values.ravel()
 
