@@ -30,3 +30,4 @@ def test_model_prediction_binary():
     y_pred = model.predict(X_test)
     unique = set(y_pred)
     assert unique.issubset({0, 1}), f"Predictions contain unexpected values: {unique}"
+    
