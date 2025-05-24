@@ -6,5 +6,7 @@ pylint
 flake8
 bandit
 pytest
+pytest-cov
 coverage
+coverage-badge
 dvc[gdrive]
