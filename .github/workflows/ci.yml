@@ -19,7 +19,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pylint flake8 bandit coverage pytest
+          pip install pylint flake8 bandit coverage pytest pytest-cov mutmut
 
       - name: Download NLTK data stopwords
         run: |
@@ -34,6 +34,7 @@ jobs:
       - name: Run tests and collect coverage
         run: |
           coverage run -m pytest tests/
+          pytest --cov=src --cov-branch --cov-report=term --cov-fail-under=95 tests/
           coverage report > coverage.txt
       
       - name: Update coverage report in README
