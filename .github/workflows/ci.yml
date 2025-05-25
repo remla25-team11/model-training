@@ -10,10 +10,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Download NLTK data stopwords
-        run: |
-          python -m nltk.downloader stopwords
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -24,6 +20,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pylint flake8 bandit coverage pytest
+
+      - name: Download NLTK data stopwords
+        run: |
+          python -m nltk.downloader stopwords
 
       - name: Lint code
         run: |
