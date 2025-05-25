@@ -38,4 +38,4 @@ jobs:
       
       - name: Update coverage report in README
         run: |
-          python update_readme_covarage.py
+          python update_covarage.py
