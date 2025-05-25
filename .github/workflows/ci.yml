@@ -33,7 +33,7 @@ jobs:
 
       - name: Run tests and collect coverage
         run: |
-          coverage run -m pytest tests/
+          pytest --cov=src --cov-branch --cov-report=term tests/
           coverage report > coverage.txt
       
       - name: Update coverage report in README
