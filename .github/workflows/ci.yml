@@ -21,6 +21,10 @@ jobs:
           pip install -r requirements.txt
           pip install pylint flake8 bandit coverage pytest
 
+      - name: Download NLTK data stopwords
+        run: |
+          python -m nltk.downloader stopwords
+
       - name: Lint code
         run: |
           pylint src/
@@ -29,5 +33,9 @@ jobs:
 
       - name: Run tests and collect coverage
         run: |
-          coverage run -m pytest
-          coverage report
+          coverage run -m pytest tests/
+          coverage report > coverage.txt
+      
+      - name: Update coverage report in README
+        run: |
+          python update_covarage.py
