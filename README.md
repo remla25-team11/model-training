@@ -65,13 +65,15 @@ This project uses Google Drive as a DVC remote to store and share datasets and t
 
 ```
 -- COVERAGE_REPORT --
-Name                           Stmts   Miss  Cover
---------------------------------------------------
-tests	est_development.py         30      0   100%
-tests	est_infrastructure.py      22      2    91%
-tests	est_monitoring.py          18      2    89%
-tests	est_mutation.py            19      0   100%
-tests	est_preprocess.py          45      0   100%
---------------------------------------------------
-TOTAL                            134      4    97%
+Name                           Stmts   Miss  Cover
+--------------------------------------------------
+tests/test_development.py         30      0   100%
+tests/test_infrastructure.py      22      2    91%
+tests/test_monitoring.py          14      0   100%
+tests/test_mutation.py            17      0   100%
+tests/test_nondeterminism.py      12      0   100%
+tests/test_performance.py         19      0   100%
+tests/test_preprocess.py          45      0   100%
+--------------------------------------------------
+TOTAL                            159      2    99%
 ```
