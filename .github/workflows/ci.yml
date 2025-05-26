@@ -59,7 +59,6 @@ jobs:
           git diff README.md || echo "No diff"
           
       - name: Commit and push any changes made by coverage.py
-        if: github.event_name == 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
