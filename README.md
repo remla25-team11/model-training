@@ -63,10 +63,9 @@ This project uses Google Drive as a DVC remote to store and share datasets and t
     ```
 ## Tests
 Tests run automatically, on every push or pull. Alternatively, they can be executed with:
-
-    ```bash
-    pytest tests/
-    ```
+```bash
+pytest tests/
+```
     
 ```
 -- COVERAGE_REPORT --
