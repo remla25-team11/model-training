@@ -17,6 +17,8 @@ pip install -r requirements.txt
 
 This project uses Google Drive as a DVC remote to store and share datasets and trained models using a custom Google Cloud OAuth application.
 
+![Screenshot from 2025-05-26 21-02-50](https://github.com/user-attachments/assets/02dc041d-14f1-4fdb-8905-09b1e46a539c)
+
 ### Setup Instructions
 
 1. Install DVC with Google Drive support:
