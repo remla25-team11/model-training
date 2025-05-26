@@ -41,7 +41,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add coverage.txt
-          git commit -m "Update coverage.txt [skip ci]" || echo "No changes to commit"
+          git commit -m "Update coverage.txt" || echo "No changes to commit"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -53,6 +53,10 @@ jobs:
       - name: Update coverage report in README
         run: |
           python update_covarage.py
+
+      - name: Diff README before commit
+        run: |
+          git diff README.md || echo "No diff"
           
       - name: Commit and push any changes made by coverage.py
         run: |
