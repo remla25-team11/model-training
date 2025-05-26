@@ -14,8 +14,6 @@ pip install -r requirements.txt
 ```
 
 ## DVC Remote Setup (Google Drive via Custom Google Cloud Project)
-![Screenshot from 2025-05-26 21-02-50](https://github.com/user-attachments/assets/77aca56e-fd01-4604-8e03-ec6e95a139ad)
-
 
 This project uses Google Drive as a DVC remote to store and share datasets and trained models using a custom Google Cloud OAuth application.
 
@@ -67,21 +65,13 @@ This project uses Google Drive as a DVC remote to store and share datasets and t
 
 ```
 -- COVERAGE_REPORT --
-Name                           Stmts   Miss  Cover
-
---------------------------------------------------
-
-tests	est_development.py         30      0   100%
-
-tests	est_infrastructure.py      22      2    91%
-
-tests	est_monitoring.py          18      2    89%
-
-tests	est_mutation.py            19      0   100%
-
-tests	est_preprocess.py          45      0   100%
-
---------------------------------------------------
-
+Name                           Stmts   Miss  Cover
+--------------------------------------------------
+tests	est_development.py         30      0   100%
+tests	est_infrastructure.py      22      2    91%
+tests	est_monitoring.py          18      2    89%
+tests	est_mutation.py            19      0   100%
+tests	est_preprocess.py          45      0   100%
+--------------------------------------------------
 TOTAL                            134      4    97%
 ```
