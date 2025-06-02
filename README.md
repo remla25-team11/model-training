@@ -63,6 +63,13 @@ This project uses Google Drive as a DVC remote to store and share datasets and t
     ```bash
     dvc push
     ```
+
+8. To see metrics
+
+``` bash
+dvc exp show
+```
+
 ## Tests
 Tests run automatically, on every push or pull. Alternatively, they can be executed with:
 ```bash
