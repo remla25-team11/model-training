@@ -6,7 +6,7 @@ def extract():
             raw = f.read()
 
         ## May need to change/adjust for different platforms
-        for enc in ("utf-16", "latin1"):
+        for enc in ("utf-8", "utf-16", "latin1"):
             try:
                 return raw.decode(enc)
             except UnicodeDecodeError:
