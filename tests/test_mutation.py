@@ -13,7 +13,7 @@ def test_synonyms():
     model = joblib.load(model_path)
 
     input_1 = ["okay"]
-    input_2 = ["fine"]
+    input_2 = ["decent"]
 
     X_a = vectorizer.transform(input_1).toarray()
     X_b = vectorizer.transform(input_2).toarray()
@@ -21,7 +21,7 @@ def test_synonyms():
     pred_a = model.predict(X_a)[0]
     pred_b = model.predict(X_b)[0]
 
-    assert pred_a != pred_b, (
+    assert pred_a == pred_b, (
         f"Expected equal, received: {pred_a} vs {pred_b}"
     )
 
