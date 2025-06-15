@@ -3,6 +3,7 @@ import numpy as np
 import os
 
 
+# Check feature dimensionality
 def test_bow_vector_size():
     vectorizer = joblib.load("models/c1_BoW_Sentiment_Model.pkl")
     sample = ["average food and ok service"]
