@@ -18,7 +18,7 @@ def run():
     )
 
     # Train classifier
-    classifier = GaussianNB()
+    classifier = GaussianNB(priors=None, var_smoothing=1e-9)
     classifier.fit(X_train, y_train)
 
     # Save model
