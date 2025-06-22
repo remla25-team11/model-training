@@ -1,5 +1,9 @@
+[MASTER]
+init-hook='import sys; sys.path.append(".")'
+load-plugins=linting.ml_code_smells
+
 [MESSAGES CONTROL]
-disable=C0114,C0115,C0116  # disables docstring warnings
+disable=C0114,C0115,C0116
 
 [FORMAT]
 max-line-length=100
